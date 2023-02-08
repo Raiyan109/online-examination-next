@@ -1,11 +1,27 @@
+"use client"
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import { useState } from 'react'
 
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
+  const [color, setColor] = useState('white')
+
+  const handleNextClick = () => {
+    setColor('green')
+    console.log('clicked');
+  }
+
+  const handleReviewClick = () => {
+    setColor('yellow')
+  }
+
+  const handleDumpClick = () => {
+    setColor('white')
+  }
   return (
     <main className={styles.main}>
       <nav style={{ backgroundColor: 'purple', width: '100%', height: '60px', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
@@ -56,7 +72,7 @@ export default function Home() {
           <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Review</button>
           <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Dump</button>
           <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Previous</button>
-          <button style={{ backgroundColor: 'blue', padding: '10px', outline: 'none', textTransform: 'uppercase' }}>Next</button>
+          <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px', outline: 'none', textTransform: 'uppercase' }} onClick={handleNextClick} >Next</button>
         </section>
 
         {/* Right section */}
@@ -93,7 +109,7 @@ export default function Home() {
             <div style={{ backgroundColor: '#7286D3', color: 'white', width: '100%', height: '20px' }}>
               <h4>Legend (Click to View)</h4>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1px', margin: '3px 0 3px 0' }}>
               <div style={{ backgroundColor: 'green', width: '84px', height: '27px', fontSize: '13px' }}><p>4 Answer</p></div>
               <div style={{ backgroundColor: 'red', width: '84px', height: '27px', fontSize: '13px' }}><p>2 No Answer</p></div>
               <div style={{ backgroundColor: '#A7727D', width: '84px', height: '27px', fontSize: '13px' }}><p>1 Review+Ans</p></div>
@@ -101,7 +117,16 @@ export default function Home() {
               <div style={{ backgroundColor: 'gray', width: '84px', height: '27px', fontSize: '13px' }}><p>1 Dump</p></div>
               <div style={{ backgroundColor: 'whiteSmoke', width: '84px', height: '27px', fontSize: '13px' }}><p>1 No Visit</p></div>
             </div>
+            <div style={{ backgroundColor: '#7286D3', color: 'white', width: '100%', height: '20px' }}>
+              <h4>10 All Questions</h4>
+            </div>
 
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', margin: '3px 0 3px 0', outline: 'none' }}>
+              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Profile</button>
+              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Instr</button>
+              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Questions</button>
+              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Submit</button>
+            </div>
           </div>
         </section>
       </section>
