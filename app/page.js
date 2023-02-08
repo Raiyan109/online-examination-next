@@ -8,7 +8,7 @@ import { useState } from 'react'
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [color, setColor] = useState('white')
+  const [color, setColor] = useState('#7286D3')
 
   const handleNextClick = () => {
     setColor('green')
@@ -69,8 +69,8 @@ export default function Home() {
 
           {/* Buttons down */}
           <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Clear Response</button>
-          <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Review</button>
-          <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Dump</button>
+          <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }} onClick={handleReviewClick}>Review</button>
+          <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }} onClick={handleDumpClick}>Dump</button>
           <button style={{ backgroundColor: 'skyblue', padding: '10px', textTransform: 'uppercase' }}>Previous</button>
           <button style={{ backgroundColor: 'blue', color: 'white', padding: '10px', outline: 'none', textTransform: 'uppercase' }} onClick={handleNextClick} >Next</button>
         </section>
@@ -122,10 +122,10 @@ export default function Home() {
             </div>
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4px', margin: '3px 0 3px 0', outline: 'none' }}>
-              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Profile</button>
-              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Instr</button>
-              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Questions</button>
-              <button style={{ backgroundColor: 'skyblue', color: 'white', borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Submit</button>
+              <button style={{ backgroundColor: color, borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Profile</button>
+              <button style={{ backgroundColor: color, borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Instr</button>
+              <button style={{ backgroundColor: color, borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Questions</button>
+              <button style={{ backgroundColor: color, borderRadius: '5px', padding: '10px', textTransform: 'uppercase' }}>Submit</button>
             </div>
           </div>
         </section>
